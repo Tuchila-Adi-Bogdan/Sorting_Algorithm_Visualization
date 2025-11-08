@@ -36,30 +36,30 @@ namespace Sorting_Algorithm_Visualizer
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button_Start_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_Load_Vector_Click(object sender, EventArgs e)
         {
-            openFileDialog4.InitialDirectory=Application.StartupPath;
+            openFileDialog4.InitialDirectory = Application.StartupPath;
             openFileDialog4.Filter = "(*.in)|*.in";
             openFileDialog4.FileName = "";
-            if(openFileDialog4.ShowDialog()==DialogResult.OK)
+            if (openFileDialog4.ShowDialog() == DialogResult.OK)
             {
                 string f = openFileDialog4.FileName;
                 StreamReader fin = new StreamReader(f);
-                string l=fin.ReadLine();
+                string l = fin.ReadLine();
                 string[] s = l.Split();
                 n = int.Parse(s[0]);
-                A=new int[n+1];
+                A = new int[n + 1];
                 int maxim = 0;
-                for (int i = 1; i<= n; i++)
+                for (int i = 1; i <= n; i++)
                 {
                     A[i] = int.Parse(s[i]);
-                    if (A[i]>maxim)
-                        maxim= A[i];
+                    if (A[i] > maxim)
+                        maxim = A[i];
                 }
                 m = maxim;
                 creare();
@@ -68,26 +68,31 @@ namespace Sorting_Algorithm_Visualizer
         }
         private void creare()
         {
-            panel1.Controls.Clear();
-            P=new PictureBox[n+1,m+1];
-            int L = panel1.Width;
-            int H = panel1.Height;
+            panel_Vizualizator.Controls.Clear();
+            P = new PictureBox[n + 1, m + 1];
+            int L = panel_Vizualizator.Width;
+            int H = panel_Vizualizator.Height;
             int w = Math.Min(L / m, H / n) - 3;
-            for (int i = 1; i<= n;i++)
-                for(int j=1;j<=m;j++)
+            for (int i = 1; i <= n; i++)
+                for (int j = 1; j <= m; j++)
                 {
                     P[i, j] = new PictureBox();
-                    P[i,j].Width = w;
+                    P[i, j].Width = w;
                     P[i, j].Height = w;
                     P[i, j].Top = (w + 2) * (i - 1);
                     P[i, j].Left = (w + 2) * (j - 1);
                     if (A[i] == 0) P[i, j].BackColor = Color.Aqua;
                     else P[i, j].BackColor = Color.Maroon;
-                    panel1.Controls.Add(P[i, j]);
+                    panel_Vizualizator.Controls.Add(P[i, j]);
                 }
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void button_Create_Vector_Click(object sender, EventArgs e)
         {
 
         }

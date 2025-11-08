@@ -1,0 +1,17 @@
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.exe
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.deps.json
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.runtimeconfig.json
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.dll
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.pdb
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.Form1.resources
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.csproj.GenerateResource.cache
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.AssemblyInfoInputs.cache
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.AssemblyInfo.cs
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.csproj.CoreCompileInputs.cache
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.sourcelink.json
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.dll
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\refint\Sorting_Algorithm_Visualizer.dll
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.pdb
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\Sorting_Algorithm_Visualizer.genruntimeconfig.cache
+C:\Users\adibo_s4utxbj\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net6.0-windows\ref\Sorting_Algorithm_Visualizer.dll
