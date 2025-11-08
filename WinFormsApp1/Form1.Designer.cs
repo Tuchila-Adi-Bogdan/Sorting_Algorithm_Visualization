@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panel_Vizualizator = new Panel();
             button_Sorted = new Button();
             button_random_n = new Button();
             textBox_Vector = new TextBox();
             textBox_No_of_Elements = new TextBox();
             label_Vector = new Label();
             label_No_of_Elements = new Label();
-            button_Create_Vector = new Button();
             button_Load_Vector = new Button();
             button_Start = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
@@ -46,14 +44,9 @@
             button_Insertion_Sort = new Button();
             button_Merge_Sort = new Button();
             button_Go = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel_Vizualizator
-            // 
-            panel_Vizualizator.Location = new Point(12, 45);
-            panel_Vizualizator.Name = "panel_Vizualizator";
-            panel_Vizualizator.Size = new Size(1397, 623);
-            panel_Vizualizator.TabIndex = 2;
             // 
             // button_Sorted
             // 
@@ -72,7 +65,6 @@
             button_random_n.TabIndex = 8;
             button_random_n.Text = "Random";
             button_random_n.UseVisualStyleBackColor = true;
-            button_random_n.Click += button_random_n_Click;
             // 
             // textBox_Vector
             // 
@@ -106,16 +98,6 @@
             label_No_of_Elements.TabIndex = 4;
             label_No_of_Elements.Text = "No. of elements =";
             // 
-            // button_Create_Vector
-            // 
-            button_Create_Vector.Location = new Point(12, 674);
-            button_Create_Vector.Name = "button_Create_Vector";
-            button_Create_Vector.Size = new Size(160, 40);
-            button_Create_Vector.TabIndex = 3;
-            button_Create_Vector.Text = "Create Vector";
-            button_Create_Vector.UseVisualStyleBackColor = true;
-            button_Create_Vector.Click += button_Create_Vector_Click;
-            // 
             // button_Load_Vector
             // 
             button_Load_Vector.Location = new Point(1249, 682);
@@ -124,13 +106,12 @@
             button_Load_Vector.TabIndex = 0;
             button_Load_Vector.Text = "Load Vector";
             button_Load_Vector.UseVisualStyleBackColor = true;
-            button_Load_Vector.Click += Button_Load_Vector_Click;
             // 
             // button_Start
             // 
-            button_Start.Location = new Point(12, 720);
+            button_Start.Location = new Point(12, 679);
             button_Start.Name = "button_Start";
-            button_Start.Size = new Size(160, 35);
+            button_Start.Size = new Size(160, 76);
             button_Start.TabIndex = 1;
             button_Start.Text = "Start";
             button_Start.UseVisualStyleBackColor = true;
@@ -148,39 +129,43 @@
             // 
             // button_Bubble_Sort
             // 
-            button_Bubble_Sort.Location = new Point(12, 12);
+            button_Bubble_Sort.Location = new Point(10, 10);
             button_Bubble_Sort.Name = "button_Bubble_Sort";
-            button_Bubble_Sort.Size = new Size(60, 29);
+            button_Bubble_Sort.Size = new Size(65, 30);
             button_Bubble_Sort.TabIndex = 11;
             button_Bubble_Sort.Text = "BUB";
             button_Bubble_Sort.UseVisualStyleBackColor = true;
+            button_Bubble_Sort.Click += button_Bubble_Sort_Click;
             // 
             // button_Selection_Sort
             // 
-            button_Selection_Sort.Location = new Point(78, 10);
+            button_Selection_Sort.Location = new Point(80, 10);
             button_Selection_Sort.Name = "button_Selection_Sort";
-            button_Selection_Sort.Size = new Size(59, 29);
+            button_Selection_Sort.Size = new Size(65, 30);
             button_Selection_Sort.TabIndex = 12;
             button_Selection_Sort.Text = "SEL";
             button_Selection_Sort.UseVisualStyleBackColor = true;
+            button_Selection_Sort.Click += button_Selection_Sort_Click;
             // 
             // button_Insertion_Sort
             // 
-            button_Insertion_Sort.Location = new Point(143, 10);
+            button_Insertion_Sort.Location = new Point(150, 10);
             button_Insertion_Sort.Name = "button_Insertion_Sort";
-            button_Insertion_Sort.Size = new Size(54, 29);
+            button_Insertion_Sort.Size = new Size(65, 30);
             button_Insertion_Sort.TabIndex = 13;
             button_Insertion_Sort.Text = "INS";
             button_Insertion_Sort.UseVisualStyleBackColor = true;
+            button_Insertion_Sort.Click += button_Insertion_Sort_Click;
             // 
             // button_Merge_Sort
             // 
-            button_Merge_Sort.Location = new Point(203, 12);
+            button_Merge_Sort.Location = new Point(220, 10);
             button_Merge_Sort.Name = "button_Merge_Sort";
-            button_Merge_Sort.Size = new Size(65, 29);
+            button_Merge_Sort.Size = new Size(65, 30);
             button_Merge_Sort.TabIndex = 0;
             button_Merge_Sort.Text = "MER";
             button_Merge_Sort.UseVisualStyleBackColor = true;
+            button_Merge_Sort.Click += button_Merge_Sort_Click;
             // 
             // button_Go
             // 
@@ -191,17 +176,25 @@
             button_Go.Text = "Go";
             button_Go.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(12, 47);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1397, 626);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1419, 767);
+            Controls.Add(pictureBox1);
             Controls.Add(button_Go);
             Controls.Add(button_Merge_Sort);
             Controls.Add(button_Insertion_Sort);
             Controls.Add(button_Selection_Sort);
             Controls.Add(button_Bubble_Sort);
-            Controls.Add(button_Create_Vector);
             Controls.Add(button_Start);
             Controls.Add(button_random_n);
             Controls.Add(textBox_Vector);
@@ -210,12 +203,11 @@
             Controls.Add(label_Vector);
             Controls.Add(button_Sorted);
             Controls.Add(button_Load_Vector);
-            Controls.Add(panel_Vizualizator);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Form1";
             Text = "Sorting Visualizer 2.0";
-            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -225,14 +217,12 @@
         private OpenFileDialog openFileDialog1;
         private OpenFileDialog openFileDialog2;
         private OpenFileDialog openFileDialog3;
-        private Panel panel_Vizualizator;
         private Button button_Sorted;
         private Button button_random_n;
         private TextBox textBox_Vector;
         private TextBox textBox_No_of_Elements;
         private Label label_Vector;
         private Label label_No_of_Elements;
-        private Button button_Create_Vector;
         private Button button_Load_Vector;
         private Button button_Start;
         private ContextMenuStrip contextMenuStrip1;
@@ -242,5 +232,6 @@
         private Button button_Insertion_Sort;
         private Button button_Merge_Sort;
         private Button button_Go;
+        private PictureBox pictureBox1;
     }
 }
