@@ -14,6 +14,7 @@ namespace Sorting_Algorithm_Visualizer
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -96,5 +97,11 @@ namespace Sorting_Algorithm_Visualizer
         {
 
         }
+
+        private void button_random_n_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
