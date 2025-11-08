@@ -1,0 +1,33 @@
+#include <fstream>
+using namespace std;
+ifstream fin("fill.in");
+ofstream fout("fill.out");
+
+int a[102][102];
+
+void fill(int a[102][102], int n, int m, int i, int j)
+{
+    a[i][j]=2;
+    if(a[i-1][j]==1) fill(a,n,m,i-1,j);//sus
+    if(a[i][j+1]==1) fill(a,n,m,i,j+1);//dreapta
+    if(a[i+1][j]==1) fill(a,n,m,i+1,j);//jos
+    if(a[i][j-1]==1) fill(a,n,m,i,j-1);//stanga
+}
+
+int main()
+{
+    int n,m,c=0;
+    fin>>n>>m;
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=m;j++)
+            fin>>a[i][j];
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=m;j++)
+            if(a[i][j]==1)
+            {
+                c++;
+                fill(a,n,m,i,j);
+            }
+    fout<<c;
+    return 0;
+}

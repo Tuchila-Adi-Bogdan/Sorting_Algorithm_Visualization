@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace fill
+{
+    public partial class Form1 : Form
+    {
+        int n, m;//dimensiunile matricii
+        int[,] A;//matricea de 0 si 1
+        PictureBox[,] P;//matricea de imagini
+        int c = 0;//numarul de zone
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //incarc sursa c++
+            StreamReader fin = new StreamReader("c++.txt");
+            string c = fin.ReadToEnd();
+            textBox1.Text = c;
+            fin.Close();
+            //incarc sursa c#
+            fin = new StreamReader("cs.txt");
+            c = fin.ReadToEnd();
+            textBox2.Text = c;
+            fin.Close();
+        }
+
+        private void coloreaza(int i, int j)
+        {//coloreaza cu verde imaginea (i,j)
+            P[i, j].BackColor = Color.Green;
+            P[i, j].Refresh();
+            System.Threading.Thread.Sleep(400);
+            //MessageBox.Show("Next");
+        }
+
+        void fill(int n, int m, int i, int j)
+        {//fill cu 2 in loc de 1
+            A[i, j] = 2;
+            coloreaza(i, j);
+            if (A[i - 1, j] == 1) fill(n, m, i - 1, j);//sus
+            if (A[i, j + 1] == 1) fill(n, m, i, j + 1);//dreapta
+            if (A[i + 1, j] == 1) fill(n, m, i + 1, j);//jos
+            if (A[i, j - 1] == 1) fill(n, m, i, j - 1);//stanga
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() ==
+                DialogResult.OK)
+            {
+                string f = openFileDialog1.FileName;
+                StreamReader fin = new StreamReader(f);
+                string l = fin.ReadLine();
+                string[] s = l.Split();
+                n = int.Parse(s[0]);//nr. de linii
+                m = int.Parse(s[1]);//nr. de coloane
+                A = new int[n + 2, m + 2];//creez matricea
+                for (int i = 1; i <= n; i++)
+                {// citesc matricea
+                    l = fin.ReadLine();
+                    s = l.Split();
+                    for (int j = 0; j < m; j++)
+                        A[i, j + 1] = int.Parse(s[j]);
+                }
+                //golesc imaginile vechi
+                panel1.Controls.Clear();
+                //creez matricea de imagini
+                P = new PictureBox[n + 2, m + 2];
+                int L = panel1.Width;//latimea panoului
+                int H = panel1.Height;//inaltimea panoului
+                for (int i = 1; i <= n; i++)
+                    for (int j = 1; j <= m; j++)
+                    {
+                        P[i, j] = new PictureBox();
+                        //calculez latura imagii a.i. sa incapa
+                        int w = Math.Min(L / m, H / n)-3;
+                        P[i, j].Width = w;
+                        P[i, j].Height = w;
+                        P[i, j].Top = (w+2) * (i - 1);
+                        P[i, j].Left = (w+2) * (j - 1);
+                        if (A[i, j] == 0) P[i, j].BackColor = Color.Aqua;
+                        else P[i, j].BackColor = Color.Maroon;
+                        panel1.Controls.Add(P[i, j]);
+                    }
+
+
+                fin.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= n; i++)
+                for (int j = 1; j <= m; j++)
+                    if (A[i, j] == 1)
+                    {
+                        c++;
+                        fill(n, m, i, j);
+                    }
+            MessageBox.Show("Exista " + c.ToString() + " zone");
+        }
+    }
+}
